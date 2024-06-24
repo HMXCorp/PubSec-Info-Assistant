@@ -1,7 +1,7 @@
 /* Copyright (c) Microsoft Corporation.
    Licensed under the MIT license. */
 
-.container {
+   .container {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -211,4 +211,10 @@
     .chatInputWarningMessage {
         bottom: 8px;
     }
+}
+
+.chatHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

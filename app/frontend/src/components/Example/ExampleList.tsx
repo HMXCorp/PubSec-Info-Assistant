@@ -11,9 +11,9 @@ export type ExampleModel = {
 };
 
 const EXAMPLES: ExampleModel[] = [
-    { text: "Are there any radio telescopes in Australia?", value: "Are there any radio telescopes in Australia?" },
-    { text: "What are Microsoft's primary sources of revenue?", value: "What are Microsoft's primary sources of revenue?" },
-    { text: "What are some flavors of Breyers?", value: "What are some flavors of Breyers?" }
+    { text: "Tell me something interesting about the Dominican Republic.", value: "Tell me something interesting about the Dominican Republic." },
+    { text: "Cuéntame algo interesante sobre la República Dominicana.", value: "Cuéntame algo interesante sobre la República Dominicana." },
+    { text: "Summarize the Specific development objectives of the Transparency and Integrity Agenda in the Dominican Republic.", value: "Summarize the Specific development objectives of the Transparency and Integrity Agenda in the Dominican Republic." }
 ];
 
 interface Props {

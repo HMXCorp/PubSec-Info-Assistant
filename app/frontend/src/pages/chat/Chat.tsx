@@ -27,6 +27,7 @@ import { InfoContent } from "../../components/InfoContent/InfoContent";
 import { FolderPicker } from "../../components/FolderPicker";
 import { TagPickerInline } from "../../components/TagPicker";
 import React from "react";
+import microsoft from "../../assets/microsoft-logo.png";
 
 const Chat = () => {
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
@@ -119,7 +120,7 @@ const Chat = () => {
                 citation_lookup: approach == Approaches.CompareWebWithWork ? web_citation_lookup : approach == Approaches.CompareWorkWithWeb ? work_citation_lookup : {},
                 thought_chain: thought_chain
             };
-
+            
             const temp: ChatResponse = {
                 answer: "",
                 thoughts: "",
@@ -143,7 +144,7 @@ const Chat = () => {
             }
 
             setAnswerStream(result.body);
-        } catch (e) {
+                } catch (e) {
             setError(e);
         } finally {
             setIsLoading(false);
@@ -348,6 +349,10 @@ const Chat = () => {
             </div>
             <div className={styles.chatRoot}>
                 <div className={styles.chatContainer}>
+                <div className={styles.chatHeader}>
+                    <img src={microsoft} alt="Microsoft" width={150}/>
+                    <h5>Advance Cloud Transparency Services</h5>
+                </div>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
                             {activeChatMode == ChatMode.WorkOnly ? 
@@ -414,9 +419,20 @@ const Chat = () => {
                                     </div>
                                 </div>
                             ))}
+                            {/* {isLoading && (
+                                <>
+                                    <UserChatMessage
+                                        message={lastQuestionRef.current}
+                                        approach={activeApproach}
+                                    />
+                                    <div className={styles.chatMessageGptMinWidth}>
+                                        <AnswerLoading approach={activeApproach}/>
+                                    </div>
+                                </>
+                            )} */}
                             {error ? (
                                 <>
-                                    <UserChatMessage message={lastQuestionRef.current} approach={activeApproach}/>
+                                    {/* <UserChatMessage message={lastQuestionRef.current} approach={activeApproach}/> */}
                                     <div className={styles.chatMessageGptMinWidth}>
                                         <AnswerError error={error.toString()} onRetry={() => makeApiRequest(lastQuestionRef.current, activeApproach, lastQuestionWorkCitationRef.current, lastQuestionWebCitiationRef.current, lastQuestionThoughtChainRef.current)} />
                                     </div>
